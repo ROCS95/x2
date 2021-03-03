@@ -31,75 +31,38 @@ namespace MonolithConect
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MonolithConect));
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridLog = new System.Windows.Forms.DataGridView();
-            this.textBoxRequest = new System.Windows.Forms.TextBox();
-            this.dataGridResponse = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.setUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iPyPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pruevasAutomaticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pruevasAutomaticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.labelAlert = new System.Windows.Forms.Label();
+            this.cerrarProgramaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLog)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridResponse)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(758, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
-            // 
             // dataGridLog
             // 
-            this.dataGridLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridLog.Location = new System.Drawing.Point(26, 28);
             this.dataGridLog.Name = "dataGridLog";
-            this.dataGridLog.Size = new System.Drawing.Size(726, 175);
+            this.dataGridLog.Size = new System.Drawing.Size(410, 102);
             this.dataGridLog.TabIndex = 4;
-            // 
-            // textBoxRequest
-            // 
-            this.textBoxRequest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxRequest.Location = new System.Drawing.Point(26, 209);
-            this.textBoxRequest.Multiline = true;
-            this.textBoxRequest.Name = "textBoxRequest";
-            this.textBoxRequest.ReadOnly = true;
-            this.textBoxRequest.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxRequest.Size = new System.Drawing.Size(726, 134);
-            this.textBoxRequest.TabIndex = 5;
-            // 
-            // dataGridResponse
-            // 
-            this.dataGridResponse.AllowUserToOrderColumns = true;
-            this.dataGridResponse.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridResponse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridResponse.Location = new System.Drawing.Point(26, 346);
-            this.dataGridResponse.Name = "dataGridResponse";
-            this.dataGridResponse.Size = new System.Drawing.Size(726, 124);
-            this.dataGridResponse.TabIndex = 6;
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setUpToolStripMenuItem});
+            this.setUpToolStripMenuItem,
+            this.cerrarProgramaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(484, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -128,16 +91,6 @@ namespace MonolithConect
             this.refreshTimeToolStripMenuItem.Text = "Refresh Time";
             this.refreshTimeToolStripMenuItem.Click += new System.EventHandler(this.refreshTimeToolStripMenuItem_Click);
             // 
-            // buttonRefresh
-            // 
-            this.buttonRefresh.Location = new System.Drawing.Point(271, 476);
-            this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(223, 29);
-            this.buttonRefresh.TabIndex = 8;
-            this.buttonRefresh.Text = "Refescar";
-            this.buttonRefresh.UseVisualStyleBackColor = true;
-            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
-            // 
             // pruevasAutomaticasToolStripMenuItem
             // 
             this.pruevasAutomaticasToolStripMenuItem.Name = "pruevasAutomaticasToolStripMenuItem";
@@ -145,16 +98,62 @@ namespace MonolithConect
             this.pruevasAutomaticasToolStripMenuItem.Text = "Pruevas Automaticas";
             this.pruevasAutomaticasToolStripMenuItem.Click += new System.EventHandler(this.pruevasAutomaticasToolStripMenuItem_Click);
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Location = new System.Drawing.Point(87, 176);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(120, 61);
+            this.buttonRefresh.TabIndex = 8;
+            this.buttonRefresh.Text = "Refescar";
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(255, 176);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 61);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Mostrar Gues In House";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // labelAlert
+            // 
+            this.labelAlert.AutoSize = true;
+            this.labelAlert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAlert.Location = new System.Drawing.Point(34, 253);
+            this.labelAlert.Name = "labelAlert";
+            this.labelAlert.Size = new System.Drawing.Size(425, 13);
+            this.labelAlert.TabIndex = 10;
+            this.labelAlert.Text = "Por Favor Referscar Solo despues de dar checkIn al cliente en el sistema";
+            // 
+            // cerrarProgramaToolStripMenuItem
+            // 
+            this.cerrarProgramaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarToolStripMenuItem});
+            this.cerrarProgramaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cerrarProgramaToolStripMenuItem.Name = "cerrarProgramaToolStripMenuItem";
+            this.cerrarProgramaToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.cerrarProgramaToolStripMenuItem.Text = "Cerrar Programa";
+            // 
+            // cerrarToolStripMenuItem
+            // 
+            this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarToolStripMenuItem.Text = "Cerrar";
+            this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
+            // 
             // MonolithConect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 508);
+            this.ClientSize = new System.Drawing.Size(484, 281);
+            this.ControlBox = false;
+            this.Controls.Add(this.labelAlert);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonRefresh);
-            this.Controls.Add(this.dataGridResponse);
-            this.Controls.Add(this.textBoxRequest);
             this.Controls.Add(this.dataGridLog);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -162,7 +161,6 @@ namespace MonolithConect
             this.Text = "MonolithConect";
             this.Load += new System.EventHandler(this.MonolithConect_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLog)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridResponse)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -171,10 +169,7 @@ namespace MonolithConect
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridLog;
-        private System.Windows.Forms.TextBox textBoxRequest;
-        private System.Windows.Forms.DataGridView dataGridResponse;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem setUpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem iPyPortToolStripMenuItem;
@@ -182,6 +177,10 @@ namespace MonolithConect
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem pruevasAutomaticasToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelAlert;
+        private System.Windows.Forms.ToolStripMenuItem cerrarProgramaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cerrarToolStripMenuItem;
     }
 }
 

@@ -73,7 +73,6 @@ namespace MonolithConect
                 HttpWebResponse response;
                 response = (HttpWebResponse)request.GetResponse();
                 requestStream.Close();
-                Log(true);
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     Stream responseStream = response.GetResponseStream();
@@ -83,12 +82,11 @@ namespace MonolithConect
                     {
                         outputFile.WriteLine(responseFinal);
                     }
-                    Log(false);
+                    Log();
                     return responseFinal;
                 }
                 else
                 {
-                    Log(false);
                     return response.StatusCode.ToString();
                 }
                 
@@ -100,7 +98,7 @@ namespace MonolithConect
             }catch (WebException ex)
             {
                 Console.WriteLine("Message :{0} ", ex.Message);
-                errorLog();
+
             }
 
             return null;
@@ -111,66 +109,20 @@ namespace MonolithConect
             return true;
         }
 
-        private void errorLog()
+        private void Log()
         {
-            DataRow row = dt.NewRow();
-
-            row["Fecha"] = date;
-            row["Hora"] = DateTime.Now.ToString("HH:mm:ss"); ;
-            row["Descripcion"] = "Request Fail";
-            dt.Rows.Add(row);
-            textBoxRequest.Text = "Error inesperado por favor revise su coneccion a internet o la sentencia del request";
-
-        }
-
-        private void Log(bool i)
-        {
-            if (i)
+            if (true)
             {
 
                 DataRow row = dt.NewRow();
-                row["Fecha"] = date;
-                row["Hora"] = DateTime.Now.ToString("HH:mm:ss"); ;
-                row["Descripcion"] = "Request Send";
+                dt.Rows.Clear();
+                row["Ultima actualizacion"] = date;
+                row["hora"] = DateTime.Now.ToString("HH:mm:ss");
                 dt.Rows.Add(row);
-                textBoxRequest.Text = ExtractQuery();//requestXml;
-            }
-            else if(!i)
-            {
-                DataRow row = dt.NewRow();
 
-                row["Fecha"] = date;
-                row["Hora"] = DateTime.Now.ToString("HH:mm:ss"); ;
-                row["Descripcion"] = "Response received";
-                dt.Rows.Add(row);
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXml(@"\\192.168.200.95\htdocs\ex_hotel\data.xml");
-                dataGridResponse.DataSource = dataSet.Tables[0];
             }
 
-        }
 
-        private string ExtractQuery()
-        {
-            string query = "";
-            bool xml = false;
-            string[] request = requestXml.Split('\n');
-            foreach (var line in request)
-            {
-                if (line.ToString().Contains("<soap:Body>"))
-                {
-                    xml = !xml;
-                }
-                else if (line.ToString().Contains("</soap:Body>"))
-                {
-                    xml = !xml;
-                }
-                if (xml && !line.ToString().Contains("soap:Body"))
-                {
-                    query += line.ToString()+"\n\n";
-                }
-            }
-            return query;
         }
 
         private void InitializeTimer()
@@ -207,34 +159,16 @@ namespace MonolithConect
                     counter = 0;
                 }
                 counter = counter + 1;
-                label1.Text = "Procedures Run: " + counter.ToString();
+                //label1.Text = "Procedures Run: " + counter.ToString();
                 
             }
-        }
-
-        private string minutos(int refresh)
-        {
-            double minutos;
-            if (refresh / 60 > 0)
-            {
-                minutos = (refresh / 60);
-                return minutos.ToString() + " Minutes";
-
-            }
-            else
-            {
-                minutos = refresh;
-                return minutos.ToString() + " Seconds";
-            }
-
         }
 
         private void MonolithConect_Load(object sender, EventArgs e)
         {
             
-            dt.Columns.Add("Fecha");
+            dt.Columns.Add("Ultima actualizacion");
             dt.Columns.Add("Hora");
-            dt.Columns.Add("Descripcion");
             dataGridLog.DataSource = dt;
             hacerPost();
             //textBoxRefresh.Text = "Refresh Time: " + minutos(refreshTime);
@@ -259,10 +193,6 @@ namespace MonolithConect
             {
                 postXMLData(DesURL, requestXml);
             }
-            else
-            {
-                textBoxRequest.Text = "Por Favor Introdusca una IP y un Puerto para hacer las consultas";
-            }
         }
 
         private void iPyPortToolStripMenuItem_Click(object sender, EventArgs e)
@@ -284,6 +214,7 @@ namespace MonolithConect
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             hacerPost();
+            Log();
             System.Windows.Forms.MessageBox.Show("La disponibilidad en la aplicacion fue actualizada");
         }
 
@@ -297,6 +228,17 @@ namespace MonolithConect
             {
                 auto = true;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            GuestInHouse frm = new GuestInHouse();
+            frm.ShowDialog();
+        }
+
+        private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

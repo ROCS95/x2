@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GuestInHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuestInHouse.Designer.cs">
+      <DependentUpon>GuestInHouse.cs</DependentUpon>
+    </Compile>
     <Compile Include="IpSetUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuestInHouse.resx">
+      <DependentUpon>GuestInHouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IpSetUp.resx">
       <DependentUpon>IpSetUp.cs</DependentUpon>
