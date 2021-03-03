@@ -29,8 +29,6 @@ namespace MonolithConect
         private void AgregarDatos()
         {
             DataSet dataSet = new DataSet();
-            DataSet guestProfile = new DataSet();
-            DataSet reservations = new DataSet();
             dataSet.ReadXml(@"\\192.168.200.95\htdocs\ex_hotel\data.xml");
             dt = dataSet.Tables["GuestProfile"];
             dt2 = dataSet.Tables["RESERVATION_LINE"];

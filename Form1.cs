@@ -104,6 +104,27 @@ namespace MonolithConect
             return null;
         }
 
+        private void checkEmail()
+        {
+            int cont = 0;
+            DataTable dt2 = new DataTable();
+            DataSet dataSet = new DataSet();
+            dataSet.ReadXml(@"\\192.168.200.95\htdocs\ex_hotel\data.xml");
+            dt2 = dataSet.Tables["GuestProfile"];
+            foreach (var item in dt2.Rows)
+            {
+                if (!item.ToString().Contains("@"))
+                {
+                    cont ++;
+                }
+            }
+            if (cont != 0)
+            {
+                System.Windows.Forms.MessageBox.Show("Un Cliente no tiene Correo asociado y no tendra acceso a la Aplicacion");
+            }
+
+        }
+
         private bool AcceptAllCertifications(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
         {
             return true;
@@ -216,6 +237,7 @@ namespace MonolithConect
             hacerPost();
             Log();
             System.Windows.Forms.MessageBox.Show("La disponibilidad en la aplicacion fue actualizada");
+            checkEmail();
         }
 
         private void pruevasAutomaticasToolStripMenuItem_Click(object sender, EventArgs e)
