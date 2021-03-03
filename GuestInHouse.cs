@@ -12,6 +12,8 @@ namespace MonolithConect
 {
     public partial class GuestInHouse : Form
     {
+        private DataTable dt = new DataTable();
+        private DataTable dt2 = new DataTable();
         public GuestInHouse()
         {
             InitializeComponent();
@@ -19,9 +21,22 @@ namespace MonolithConect
 
         private void GuestInHouse_Load(object sender, EventArgs e)
         {
+            AgregarDatos();
+
+
+        }
+
+        private void AgregarDatos()
+        {
             DataSet dataSet = new DataSet();
+            DataSet guestProfile = new DataSet();
+            DataSet reservations = new DataSet();
             dataSet.ReadXml(@"\\192.168.200.95\htdocs\ex_hotel\data.xml");
-            dataGridViewGuest.DataSource = dataSet.Tables[0];
+            dt = dataSet.Tables["GuestProfile"];
+            dt2 = dataSet.Tables["RESERVATION_LINE"];
+            dt.Merge(dt2);
+            dataGridViewGuest.DataSource = dt;
+
         }
 
         private void copyAlltoClipboard()
