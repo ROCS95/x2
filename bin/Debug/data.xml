@@ -1,0 +1,165 @@
+<INHOUSE>
+   <RESERVATION_LINE ID="10001">
+      <Reservation_ID>RS-0001365</Reservation_ID>
+      <Booking></Booking>
+      <Arrival> 2021-03-01</Arrival>
+      <Departure> 2021-03-04</Departure>
+      <Room>14</Room>
+      <RoomType>1</RoomType>
+      <Agency>TERRANOVA DISENO DE VIAJES</Agency>
+      <Guarantee>02</Guarantee>
+      <MarketCode>02</MarketCode>
+      <SubMarketCode>01</SubMarketCode>
+      <GuestProfile>
+         <Name>JUAN PABLO</Name>
+         <Surname>BANUELOS</Surname>
+         <Identification>639823156</Identification>
+         <Telephone1></Telephone1>
+         <Telephone2></Telephone2>
+         <POBox></POBox>
+         <Country>MX</Country>
+         <email>jpbanuelos_91@hotmail.com</email>
+         <BirthDate>0-0</BirthDate>
+      </GuestProfile>
+   </RESERVATION_LINE>
+   <RESERVATION_LINE ID="10001">
+      <Reservation_ID>RS-0001511</Reservation_ID>
+      <Booking></Booking>
+      <Arrival> 2021-03-03</Arrival>
+      <Departure> 2021-03-04</Departure>
+      <Room>21</Room>
+      <RoomType>1</RoomType>
+      <Agency>DIRECTOS</Agency>
+      <Guarantee>02</Guarantee>
+      <MarketCode>01</MarketCode>
+      <SubMarketCode>01</SubMarketCode>
+      <GuestProfile>
+         <Name>MAINOR</Name>
+         <Surname>SALAS PINEDA</Surname>
+         <Identification>1-0956-0657</Identification>
+         <Telephone1>88490694</Telephone1>
+         <Telephone2></Telephone2>
+         <POBox></POBox>
+         <Country>CR</Country>
+         <email>salaspi@gmail.com</email>
+         <BirthDate>11-76</BirthDate>
+      </GuestProfile>
+   </RESERVATION_LINE>
+   <RESERVATION_LINE ID="01001">
+      <Reservation_ID>WR-001412</Reservation_ID>
+      <Booking>PNGZIJL</Booking>
+      <Arrival> 2021-02-27</Arrival>
+      <Departure> 2021-03-04</Departure>
+      <Room>12</Room>
+      <RoomType>1</RoomType>
+      <Agency>DIRECTOS WEB</Agency>
+      <Guarantee>02</Guarantee>
+      <MarketCode></MarketCode>
+      <SubMarketCode>0</SubMarketCode>
+      <GuestProfile>
+         <Name>BRIDGETTE</Name>
+         <Surname>REICHERT</Surname>
+         <Identification>642684542</Identification>
+         <Telephone1>708-955-7346</Telephone1>
+         <Telephone2></Telephone2>
+         <POBox>66212</POBox>
+         <Country>US</Country>
+         <email>chibridge83@yahoo.com</email>
+         <BirthDate>5-83</BirthDate>
+      </GuestProfile>
+   </RESERVATION_LINE>
+   <RESERVATION_LINE ID="10001">
+      <Reservation_ID>WR-001485</Reservation_ID>
+      <Booking>OTA-2946693580-04</Booking>
+      <Arrival> 2021-03-02</Arrival>
+      <Departure> 2021-03-06</Departure>
+      <Room>19</Room>
+      <RoomType>1</RoomType>
+      <Agency>BOOKING.COM</Agency>
+      <Guarantee>02</Guarantee>
+      <MarketCode></MarketCode>
+      <SubMarketCode>1</SubMarketCode>
+      <GuestProfile>
+         <Name>RACHEL</Name>
+         <Surname>COPPOLINO</Surname>
+         <Identification>X6099155</Identification>
+         <Telephone1>+41 78 722 32 41</Telephone1>
+         <Telephone2></Telephone2>
+         <POBox></POBox>
+         <Country>CH</Country>
+         <email>rachel.coppolino@gmail.com</email>
+         <BirthDate>9-1989</BirthDate>
+      </GuestProfile>
+   </RESERVATION_LINE>
+   <RESERVATION_LINE ID="01001">
+      <Reservation_ID>WR-001655</Reservation_ID>
+      <Booking>OTA-3655621196-08</Booking>
+      <Arrival> 2021-03-03</Arrival>
+      <Departure> 2021-03-07</Departure>
+      <Room>08</Room>
+      <RoomType>2</RoomType>
+      <Agency>BOOKING.COM</Agency>
+      <Guarantee>02</Guarantee>
+      <MarketCode></MarketCode>
+      <SubMarketCode>1</SubMarketCode>
+      <GuestProfile>
+         <Name>MONIKA</Name>
+         <Surname>SCHENKER</Surname>
+         <Identification></Identification>
+         <Telephone1>+41 79 234 72 45</Telephone1>
+         <Telephone2></Telephone2>
+         <POBox></POBox>
+         <Country>CH</Country>
+         <email></email>
+         <BirthDate>0-0</BirthDate>
+      </GuestProfile>
+   </RESERVATION_LINE>
+   <RESERVATION_LINE ID="01001">
+      <Reservation_ID>WR-001672</Reservation_ID>
+      <Booking>OTA-1737238720-05</Booking>
+      <Arrival> 2021-03-01</Arrival>
+      <Departure> 2021-03-05</Departure>
+      <Room>11</Room>
+      <RoomType>1</RoomType>
+      <Agency>EXPEDIA.COM</Agency>
+      <Guarantee>01</Guarantee>
+      <MarketCode></MarketCode>
+      <SubMarketCode>2</SubMarketCode>
+      <GuestProfile>
+         <Name>MINA</Name>
+         <Surname>PAKZAD</Surname>
+         <Identification>660865511</Identification>
+         <Telephone1>0 0 4059227291</Telephone1>
+         <Telephone2></Telephone2>
+         <POBox></POBox>
+         <Country>US</Country>
+         <email>m.pakzadod@yahoo.com</email>
+         <BirthDate>11-1982</BirthDate>
+      </GuestProfile>
+   </RESERVATION_LINE>
+   <RESERVATION_LINE ID="01001">
+      <Reservation_ID>WR-001796</Reservation_ID>
+      <Booking>OTA-3875687835-08</Booking>
+      <Arrival> 2021-03-02</Arrival>
+      <Departure> 2021-03-05</Departure>
+      <Room>07</Room>
+      <RoomType>1</RoomType>
+      <Agency>BOOKING.COM</Agency>
+      <Guarantee>02</Guarantee>
+      <MarketCode></MarketCode>
+      <SubMarketCode>1</SubMarketCode>
+      <GuestProfile>
+         <Name>AMINA</Name>
+         <Surname>RAMDANE</Surname>
+         <Identification>21LA71201</Identification>
+         <Telephone1>+33 6 25 85 91 07</Telephone1>
+         <Telephone2></Telephone2>
+         <POBox></POBox>
+         <Country>FR</Country>
+         <email>amina.ramdane@sciencespo.fr</email>
+         <BirthDate>11-92</BirthDate>
+      </GuestProfile>
+   </RESERVATION_LINE>
+</INHOUSE>
+
+
