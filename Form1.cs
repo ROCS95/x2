@@ -107,18 +107,37 @@ namespace MonolithConect
         private void checkEmail()
         {
             int cont = 0;
+            int cont2 = 0;
+            string[] guest;
             DataTable dt2 = new DataTable();
             DataSet dataSet = new DataSet();
             dataSet.ReadXml(@"\\192.168.200.95\htdocs\ex_hotel\data.xml");
             dt2 = dataSet.Tables["GuestProfile"];
-            foreach (var item in dt2.Rows)
+
+            foreach (DataRow item in dt2.Rows)
             {
-                if (!item.ToString().Contains("@"))
+            guest = new string[item.ItemArray.Length];
+                foreach (var item2 in item.ItemArray)
                 {
-                    cont ++;
+                    guest[cont] = item2.ToString();
+                    cont++;
+                    if (guest.Length == cont)
+                    {
+                        if (!guest[8].Contains("@"))
+                        {
+                            cont2++;
+                        }
+                        cont = 0;
+                    }
+
                 }
+                
             }
-            if (cont != 0)
+
+            {
+
+            }
+            if (cont2 != 0)
             {
                 System.Windows.Forms.MessageBox.Show("Un Cliente no tiene Correo asociado y no tendra acceso a la Aplicacion");
             }
