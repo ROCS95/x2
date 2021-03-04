@@ -123,7 +123,7 @@ namespace MonolithConect
                     cont++;
                     if (guest.Length == cont)
                     {
-                        if (!guest[8].Contains("@"))
+                        if (!guest[7].Contains("@"))
                         {
                             cont2++;
                         }
