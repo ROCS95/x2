@@ -37,12 +37,12 @@ namespace MonolithConect
             this.iPyPortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshTimeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pruevasAutomaticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarProgramaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonRefresh = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.labelAlert = new System.Windows.Forms.Label();
-            this.cerrarProgramaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridLog)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,7 @@ namespace MonolithConect
             this.menuStrip1.Size = new System.Drawing.Size(484, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // setUpToolStripMenuItem
             // 
@@ -98,6 +99,22 @@ namespace MonolithConect
             this.pruevasAutomaticasToolStripMenuItem.Text = "Pruevas Automaticas";
             this.pruevasAutomaticasToolStripMenuItem.Click += new System.EventHandler(this.pruevasAutomaticasToolStripMenuItem_Click);
             // 
+            // cerrarProgramaToolStripMenuItem
+            // 
+            this.cerrarProgramaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarToolStripMenuItem});
+            this.cerrarProgramaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cerrarProgramaToolStripMenuItem.Name = "cerrarProgramaToolStripMenuItem";
+            this.cerrarProgramaToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
+            this.cerrarProgramaToolStripMenuItem.Text = "Cerrar Programa";
+            // 
+            // cerrarToolStripMenuItem
+            // 
+            this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
+            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.cerrarToolStripMenuItem.Text = "Cerrar";
+            this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
+            // 
             // buttonRefresh
             // 
             this.buttonRefresh.Location = new System.Drawing.Point(87, 176);
@@ -127,22 +144,6 @@ namespace MonolithConect
             this.labelAlert.Size = new System.Drawing.Size(425, 13);
             this.labelAlert.TabIndex = 10;
             this.labelAlert.Text = "Por Favor Referscar Solo despues de dar checkIn al cliente en el sistema";
-            // 
-            // cerrarProgramaToolStripMenuItem
-            // 
-            this.cerrarProgramaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cerrarToolStripMenuItem});
-            this.cerrarProgramaToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cerrarProgramaToolStripMenuItem.Name = "cerrarProgramaToolStripMenuItem";
-            this.cerrarProgramaToolStripMenuItem.Size = new System.Drawing.Size(111, 20);
-            this.cerrarProgramaToolStripMenuItem.Text = "Cerrar Programa";
-            // 
-            // cerrarToolStripMenuItem
-            // 
-            this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
-            this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cerrarToolStripMenuItem.Text = "Cerrar";
-            this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
             // 
             // MonolithConect
             // 

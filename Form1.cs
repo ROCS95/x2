@@ -45,7 +45,7 @@ namespace MonolithConect
     "</GET_EXT_INHOUSE>\n" +
     "</soap:Body>\n" +
 "</soap:Envelope>\n";
-
+        private bool post = false;
 
         public MonolithConect()
         {
@@ -83,6 +83,7 @@ namespace MonolithConect
                         outputFile.WriteLine(responseFinal);
                     }
                     Log();
+                    post = true;
                     return responseFinal;
                 }
                 else
@@ -100,6 +101,11 @@ namespace MonolithConect
                 Console.WriteLine("Message :{0} ", ex.Message);
 
             }
+            catch (IOException ex)
+            {
+                Console.WriteLine("Message :{0} ", ex.Message);
+
+            }
 
             return null;
         }
@@ -111,36 +117,45 @@ namespace MonolithConect
             string[] guest;
             DataTable dt2 = new DataTable();
             DataSet dataSet = new DataSet();
-            dataSet.ReadXml(@"\\192.168.200.95\htdocs\ex_hotel\data.xml");
-            dt2 = dataSet.Tables["GuestProfile"];
-
-            foreach (DataRow item in dt2.Rows)
+            try
             {
-            guest = new string[item.ItemArray.Length];
-                foreach (var item2 in item.ItemArray)
+                dataSet.ReadXml(@"\\192.168.200.95\htdocs\ex_hotel\data.xml");
+                dt2 = dataSet.Tables["GuestProfile"];
+
+                foreach (DataRow item in dt2.Rows)
                 {
-                    guest[cont] = item2.ToString();
-                    cont++;
-                    if (guest.Length == cont)
+                    guest = new string[item.ItemArray.Length];
+                    foreach (var item2 in item.ItemArray)
                     {
-                        if (!guest[7].Contains("@"))
+                        guest[cont] = item2.ToString();
+                        cont++;
+                        if (guest.Length == cont)
                         {
-                            cont2++;
+                            if (!guest[7].Contains("@"))
+                            {
+                                cont2++;
+                            }
+                            cont = 0;
                         }
-                        cont = 0;
+
                     }
 
                 }
-                
-            }
 
+                {
+
+                }
+                if (cont2 != 0)
+                {
+                    System.Windows.Forms.MessageBox.Show("Un Cliente no tiene Correo asociado y no tendra acceso a la Aplicacion");
+                }
+            }
+            catch (IOException ex)
             {
+                Console.WriteLine("Message :{0} ", ex.Message);
 
             }
-            if (cont2 != 0)
-            {
-                System.Windows.Forms.MessageBox.Show("Un Cliente no tiene Correo asociado y no tendra acceso a la Aplicacion");
-            }
+            
 
         }
 
@@ -211,6 +226,7 @@ namespace MonolithConect
             dt.Columns.Add("Hora");
             dataGridLog.DataSource = dt;
             hacerPost();
+
             //textBoxRefresh.Text = "Refresh Time: " + minutos(refreshTime);
         }
 
@@ -254,8 +270,11 @@ namespace MonolithConect
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             hacerPost();
-            Log();
-            System.Windows.Forms.MessageBox.Show("La disponibilidad en la aplicacion fue actualizada");
+            if (post)
+            {
+                System.Windows.Forms.MessageBox.Show("La disponibilidad en la aplicacion fue actualizada");
+                post = false;
+            }
             checkEmail();
         }
 
@@ -280,6 +299,11 @@ namespace MonolithConect
         private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

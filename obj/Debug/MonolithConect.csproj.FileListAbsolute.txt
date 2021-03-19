@@ -10,7 +10,6 @@ C:\Users\Robert\Documents\Proyectos\MonolithConect\obj\Debug\MonolithConect.pdb
 C:\Users\Robert\Documents\Proyectos\MonolithConect\obj\Debug\MonolithConect.MonolithConect.resources
 C:\Users\Robert\Documents\Proyectos\MonolithConect\obj\Debug\MonolithConect.IpSetUp.resources
 C:\Users\Robert\Documents\Proyectos\MonolithConect\obj\Debug\MonolithConect.RefreshTime.resources
-C:\Users\Robert\Documents\Proyectos\MonolithConect2\obj\Debug\MonolithConect.csprojAssemblyReference.cache
 C:\Users\Robert\Documents\Proyectos\MonolithConect2\obj\Debug\MonolithConect.exe
 C:\Users\Robert\Documents\Proyectos\MonolithConect2\obj\Debug\MonolithConect.pdb
 C:\Users\Robert\Documents\Proyectos\MonolithConect2\bin\Debug\MonolithConect.exe.config
@@ -23,3 +22,4 @@ C:\Users\Robert\Documents\Proyectos\MonolithConect2\obj\Debug\MonolithConect.Ref
 C:\Users\Robert\Documents\Proyectos\MonolithConect2\obj\Debug\MonolithConect.csproj.GenerateResource.cache
 C:\Users\Robert\Documents\Proyectos\MonolithConect2\obj\Debug\MonolithConect.csproj.CoreCompileInputs.cache
 C:\Users\Robert\Documents\Proyectos\MonolithConect2\obj\Debug\MonolithConect.GuestInHouse.resources
+C:\Users\Robert\Documents\Proyectos\MonolithConect2\obj\Debug\MonolithConect.csprojAssemblyReference.cache

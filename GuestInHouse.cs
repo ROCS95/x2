@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,44 +22,123 @@ namespace MonolithConect
 
         private void GuestInHouse_Load(object sender, EventArgs e)
         {
-            AgregarDatos();
+            AgregarDatos2();
+            
+            
+        }
 
+        private void Sort()
+        {
+            try
+            {
+            dataGridViewAcceso.Columns["Room"].DisplayIndex = 0;
+            dataGridViewAcceso.Columns["Arrival"].DisplayIndex = 1;
+            dataGridViewAcceso.Columns["Departure"].DisplayIndex = 2;
+            dataGridViewAcceso.Columns["Name"].DisplayIndex = 3;
+            dataGridViewAcceso.Columns["Surname"].DisplayIndex = 4;
+            dataGridViewAcceso.Columns["Email"].DisplayIndex = 5; 
+            dataGridViewSinAcceso.Columns["Room"].DisplayIndex = 0;
+            dataGridViewSinAcceso.Columns["Arrival"].DisplayIndex = 1;
+            dataGridViewSinAcceso.Columns["Departure"].DisplayIndex = 2;
+            dataGridViewSinAcceso.Columns["Name"].DisplayIndex = 3;
+            dataGridViewSinAcceso.Columns["Surname"].DisplayIndex = 4;
+            dataGridViewSinAcceso.Columns["Email"].DisplayIndex = 5;
+            }
+            catch (NullReferenceException ex)
+            {
+
+                Console.WriteLine("Message :{0} ", ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Message :{0} ", ex.Message);
+            }
 
         }
 
         private void AgregarDatos()
         {
+            try
+            {
             DataSet dataSet = new DataSet();
             dataSet.ReadXml(@"\\192.168.200.95\htdocs\ex_hotel\data.xml");
             dt = dataSet.Tables["GuestProfile"];
             dt2 = dataSet.Tables["RESERVATION_LINE"];
             dt.Merge(dt2);
-            dataGridViewGuest.DataSource = dt;
+            dataGridViewAcceso.DataSource = dt;
+            Acceso();
+            Sort();
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine("Message :{0} ", ex.Message);
+
+            }
+
 
         }
 
-        private void copyAlltoClipboard()
+        private void AgregarDatos2()
         {
-            dataGridViewGuest.SelectAll();
-            DataObject dataObj = dataGridViewGuest.GetClipboardContent();
-            if (dataObj != null)
-                Clipboard.SetDataObject(dataObj);
+            try
+            {
+            DataSet dataSet = new DataSet();
+            dataSet.ReadXml(@"\\192.168.200.95\htdocs\ex_hotel\data.xml");
+            dt = dataSet.Tables["GuestProfile"];
+            dt2 = dataSet.Tables["RESERVATION_LINE"];
+            dt.Merge(dt2);
+            dataGridViewSinAcceso.DataSource = dt;
+            SinAcceso();
+            AgregarDatos();
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine("Message :{0} ", ex.Message);
+
+            }
+
         }
 
-        private void exportarAExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SinAcceso()
         {
-            /*copyAlltoClipboard();
-            Microsoft.Office.Interop.Excel.Application xlexcel;
-            Microsoft.Office.Interop.Excel.Workbook xlWorkBook;
-            Microsoft.Office.Interop.Excel.Worksheet xlWorkSheet;
-            object misValue = System.Reflection.Missing.Value;
-            xlexcel = new Excel.Application();
-            xlexcel.Visible = true;
-            xlWorkBook = xlexcel.Workbooks.Add(misValue);
-            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-            Excel.Range CR = (Excel.Range)xlWorkSheet.Cells[1, 1];
-            CR.Select();
-            xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);*/
+            string[] data = new string[dataGridViewSinAcceso.ColumnCount];
+            for(int i = 0; i < dataGridViewSinAcceso.RowCount; i++)
+            {
+                for (int j = 0; j < dataGridViewSinAcceso.ColumnCount; j++)
+                {
+                    data[j] = (string)dataGridViewSinAcceso[j, i].Value;
+                }
+                if (data[7] != null)
+                {
+                    if (data[7].Contains("@"))
+                    {
+                         dataGridViewSinAcceso.Rows.RemoveAt(i);
+                         i--;
+                    }
+                }
+            }
+            
+        }
+
+        private void Acceso()
+        {
+            string[] data = new string[dataGridViewAcceso.ColumnCount];
+            for (int i = 0; i < dataGridViewAcceso.RowCount; i++)
+            {
+                for (int j = 0; j < dataGridViewAcceso.ColumnCount; j++)
+                {
+                    data[j] = (string)dataGridViewAcceso[j, i].Value;
+                }
+                if (data[7] != null)
+                {
+                    if (!data[7].Contains("@"))
+                    {
+                        dataGridViewAcceso.Rows.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
         }
     }
 }

@@ -29,57 +29,70 @@ namespace MonolithConect
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridViewGuest = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.exportarAExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGuest)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuestInHouse));
+            this.dataGridViewAcceso = new System.Windows.Forms.DataGridView();
+            this.dataGridViewSinAcceso = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAcceso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSinAcceso)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridViewGuest
+            // dataGridViewAcceso
             // 
-            this.dataGridViewGuest.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewAcceso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewGuest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGuest.Location = new System.Drawing.Point(12, 45);
-            this.dataGridViewGuest.Name = "dataGridViewGuest";
-            this.dataGridViewGuest.Size = new System.Drawing.Size(1150, 373);
-            this.dataGridViewGuest.TabIndex = 0;
+            this.dataGridViewAcceso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAcceso.Location = new System.Drawing.Point(12, 28);
+            this.dataGridViewAcceso.Name = "dataGridViewAcceso";
+            this.dataGridViewAcceso.Size = new System.Drawing.Size(1150, 183);
+            this.dataGridViewAcceso.TabIndex = 0;
             // 
-            // menuStrip1
+            // dataGridViewSinAcceso
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportarAExcelToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.Visible = false;
+            this.dataGridViewSinAcceso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSinAcceso.Location = new System.Drawing.Point(12, 253);
+            this.dataGridViewSinAcceso.Name = "dataGridViewSinAcceso";
+            this.dataGridViewSinAcceso.Size = new System.Drawing.Size(1150, 185);
+            this.dataGridViewSinAcceso.TabIndex = 1;
             // 
-            // exportarAExcelToolStripMenuItem
+            // label1
             // 
-            this.exportarAExcelToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exportarAExcelToolStripMenuItem.Name = "exportarAExcelToolStripMenuItem";
-            this.exportarAExcelToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
-            this.exportarAExcelToolStripMenuItem.Text = "Exportar a Excel";
-            this.exportarAExcelToolStripMenuItem.Click += new System.EventHandler(this.exportarAExcelToolStripMenuItem_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Clientes con Acceso al App";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 225);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(208, 18);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Clientes sin Acceso al App";
             // 
             // GuestInHouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 450);
-            this.Controls.Add(this.dataGridViewGuest);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridViewSinAcceso);
+            this.Controls.Add(this.dataGridViewAcceso);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "GuestInHouse";
             this.Text = "GuestInHouse";
             this.Load += new System.EventHandler(this.GuestInHouse_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGuest)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAcceso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSinAcceso)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,8 +100,9 @@ namespace MonolithConect
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewGuest;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem exportarAExcelToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridViewAcceso;
+        private System.Windows.Forms.DataGridView dataGridViewSinAcceso;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
